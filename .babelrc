@@ -1,0 +1,12 @@
+{
+  "env": {
+    "production": {
+      "plugins": ["babel-plugin-webpack-alias", "transform-decorators-legacy" ,"transform-class-properties", "syntax-dynamic-import"],
+      "presets": ["react-optimize", "es2017", "react", "airbnb"]
+    },
+    "development": {
+      "plugins": ["babel-plugin-webpack-alias", "transform-decorators-legacy" ,"transform-class-properties", "syntax-dynamic-import"],
+      "presets": ["es2017", "react", "airbnb"]
+    }
+  }
+}

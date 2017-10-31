@@ -1,0 +1,119 @@
+
+@import '../main';
+
+.ev-main__container {
+  padding-left: 65px;
+  transition: .25s linear;
+  width: 100%;
+
+  &.ev-expanded {
+    background-color: $ev-background;
+    height: 100%;
+    padding-left: 220px;
+    transition: .25s linear;
+    width: 100%;
+  }
+}
+
+.ev-main__left-container {
+  float: left;
+  height: 100%;
+  left: 0;
+  min-width: 50px;
+  position: fixed;
+  top: 0;
+  transition: .25s linear;
+  width: 65px;
+  z-index: 11;
+  box-shadow: 1px 0 5px -2px #ccc;
+
+  &.ev-expanded {
+    width: 220px;
+  }
+}
+
+.ev-main__right-container {
+  background-color: $ev-background;
+  float: left;
+  transition: .25s linear;
+  width: 100%;
+}
+
+@media only screen and (min-width: 991px) {
+  .ev-main__content {
+    padding: 2rem;
+    min-height: 90vh;
+  }
+}
+
+.ev-main__sidebar {
+  background-color: $ev-primary;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2) !important;
+}
+
+@media only screen and (max-width: 640px) {}
+
+@media only screen and (max-width: 990px) {
+  .ev-main__container {
+    padding-left: initial;
+
+    &.ev-expanded {
+      padding-left: initial;
+    }
+  }
+
+  .ev-main__left-container {
+    left: -300px;
+    min-width: 50px;
+    width: 300px;
+
+    &.ev-expanded {
+      left: 0;
+      width: 300px;
+    }
+  }
+
+  .ev-main__right-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ev-main__sidebar {
+    overflow-y: auto;
+    text-align: center;
+  }
+
+  .ev-main__content {
+    padding: 0.6rem;
+  }
+}
+
+.ev-main__main-error-div {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+
+  .ev-main__error-message {
+    margin-top: 30%;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+.ev-main__color_button {
+  background-color: $ev-accent !important;
+  color: #fff !important;
+}
+
+.wrapper {
+  background: #FFFFFF;
+  padding: 40px 50px;
+  position: relative;
+  min-height: 80vh;
+}

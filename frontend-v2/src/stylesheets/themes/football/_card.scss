@@ -1,0 +1,17 @@
+
+@mixin ev-shadow {
+  box-shadow: 0 4px 8px 0 $ev-box-shadow-1;
+}
+
+@mixin ev-border-radius {
+  border-radius: 5px;
+}
+
+@mixin ev-card {
+  box-shadow: 0 4px 8px 0 $ev-box-shadow-1;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 6px 20px 0 $ev-box-shadow-2;
+  }
+}
