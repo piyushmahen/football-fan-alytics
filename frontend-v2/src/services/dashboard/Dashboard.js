@@ -15,7 +15,7 @@ const getCompetitionLeagues = (year) => (
 
 const getSingleCompetitionLeague = (link) => (
   fetch(link, {
-    method: HTTP.POST,
+    method: HTTP.GET,
     headers: new Headers({
       'X-Auth-Token': apiToken,
     }),
