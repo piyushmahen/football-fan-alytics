@@ -1,4 +1,4 @@
-import { getCompetitionLeagues, getSingleCompetitionLeague } from './../../services/dashboard/Dashboard';
+import { getCompetitionLeagues } from './../../services/dashboard/Dashboard';
 
 const DashboardActionTypes = {
   GET_COMPETITION_LEAGUES: 'DASHBOARD/GET_COMPETITION_LEAGUES',
@@ -15,14 +15,7 @@ const getCompetitionLeaguesAction = () => (dispatch) => {
   .catch(() => dispatch(apiFailed()));
 };
 
-const getSingleCompetitionLeagueAction = (link) => (dispatch) => {
-  getSingleCompetitionLeague(link)
-  .then((data) => console.log(data))
-  .catch(() => dispatch(apiFailed()));
-};
-
 export {
   getCompetitionLeaguesAction,
-  getSingleCompetitionLeagueAction,
   DashboardActionTypes,
 };

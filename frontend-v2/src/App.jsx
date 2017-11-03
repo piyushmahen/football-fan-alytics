@@ -1,11 +1,11 @@
 
 import 'babel-polyfill';
 
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import { render } from 'react-dom';
 
 import Promise from 'promise-polyfill';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import classNames from 'classnames';
 
 import Store from './store/Store';
@@ -14,31 +14,17 @@ import './stylesheets/components/App.scss';
 
 window.Promise = window.Promise || Promise;
 
-@connect((store) => ({ expanded: store.app.expanded }))
-class App extends Component {
+class App extends PureComponent {
   static propTypes = {
     children: PropTypes.object,
-    location: PropTypes.object,
-    userData: PropTypes.object,
-    expanded: PropTypes.bool,
-    screenSizeBig: PropTypes.bool,
-    dispatch: PropTypes.func,
-    isError: PropTypes.bool,
-    isLoading: PropTypes.bool,
-    showOnboarding: PropTypes.bool,
   };
-
-  state = {
-    expandedHover: false,
-  };
-
   render() {
     const classes = {
       container: classNames('ev-main__container', {
-        'ev-expanded': this.props.expanded,
+        'ev-expanded': false,
       }),
       leftContainer: classNames('ev-main__left-container', {
-        'ev-expanded': this.props.expanded || this.state.expandedHover,
+        'ev-expanded': false,
       }),
       rightContainer: classNames('ev-main__right-container'),
       content: classNames('ev-main__content'),

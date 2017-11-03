@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 import { HTTP, raiseStatus, apiToken, apiTopLevelUri } from '../../scripts/Http';
 
 const getCompetitionLeagues = (year) => (
-  fetch(`${apiTopLevelUri}/v1/competitions/?season=${year || '2015'}`, {
+  fetch(`${apiTopLevelUri}/v1/competitions/?season=${year || '2016'}`, {
     method: HTTP.GET,
     credentials: 'same-origin',
     headers: {

@@ -29,7 +29,7 @@
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "^2.2.0",
     "scsslint": "0.0.3",
-    "semantic-ui-react": "^0.71.3",
+    "semantic-ui-react": "^0.75.1",
     "validator": "^6.2.1",
     "whatwg-fetch": "^2.0.3"
   },

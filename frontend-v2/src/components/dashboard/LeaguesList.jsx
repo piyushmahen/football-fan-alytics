@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { List, Loader } from 'semantic-ui-react';
+import { history } from '../../Routes';
 
 const LeaguesList = (props) => {
   LeaguesList.propTypes = {
     competitionsList: PropTypes.array.isRequired,
     isLoading: PropTypes.bool.isRequired,
-    onLeagueClick: PropTypes.func.isRequired,
   };
-  const leagueOnClick = (link) => props.onLeagueClick(link);
+
+  const goToCompetition = (link, id) => history.push({ pathname: '/competition', state: { link, id } });
   const showAllLeagues = () => props.competitionsList.map((league, key) => (
 // eslint-disable-next-line no-underscore-dangle
-    <List.Item key={key} onClick={() => leagueOnClick(league._links.fixtures.href)}>
+    <List.Item key={key} onClick={() => goToCompetition(league._links.leagueTable.href, league.id)}>
       <List.Icon name="game" size="large" verticalAlign="middle" />
       <List.Content>
         <List.Header as="a">{league.league}</List.Header>
@@ -31,7 +32,7 @@ const LeaguesList = (props) => {
 
   return (
     <div className="wrapper">
-      <List size="massive" divided relaxed>
+      <List animated verticalAlign="middle" size="massive" divided relaxed>
         {showAllLeagues()}
       </List>
     </div>
