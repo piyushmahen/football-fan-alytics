@@ -4,6 +4,7 @@ import { DashboardActionTypes } from '../../actions/dashboard/Dashboard';
 const initialState = {
   isLoading: true,
   competitionsList: [],
+  year: '2016',
 };
 
 const dashboardReducer = (state = initialState, action) => {
@@ -13,6 +14,12 @@ const dashboardReducer = (state = initialState, action) => {
         ...state,
         competitionsList: action.payload,
         isLoading: false,
+      };
+    case DashboardActionTypes.CHANGE_YEAR:
+      return {
+        ...state,
+        year: action.payload,
+        isLoading: true,
       };
     default:
       return state;
