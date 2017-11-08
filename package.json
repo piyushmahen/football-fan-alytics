@@ -6,6 +6,7 @@
   "scripts": {
     "watch": "webpack --watch & node server.js",
     "prod": "webpack --env.upload --env.distPath=\"dist\"",
+    "start": "webpack --env.upload --env.distPath=\"dist\" & node server.js",
     "watch-perf": "webpack --env.perf --watch & node server.js"
   },
   "author": "Football-is-life",
